@@ -1,0 +1,68 @@
+:root {
+    --border-color: #D9D9D9;
+}
+.btn {
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.main-container {
+    height: 100vh;
+    padding: 2%;
+   
+}
+
+.modifyContainer {
+    display: flex;
+    justify-content: space-between;
+    /* background: #000; */
+}
+.btnfilterAll{
+    background: #FFFFFF;
+    box-shadow: 1px 1px 4px rgba(0, 10, 255, 0.25);
+    border-radius: 5px;
+    height: 35px;
+    padding: 0 8px;
+    font-size: 0.8rem;
+}
+
+.searchbox {
+    width: 300px;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+    font-size: 0.8rem;
+}
+
+.searchbox input#search {
+    width: 300px;
+    height: 35px;
+    background: #FFFFFF;
+    border: 1px solid var(--border-color);
+    font-size: 0.8rem;
+    float: left;
+    color: #262626;
+    padding-left: 40px;
+ 
+    border-radius: 5px;
+    transition: all .55s ease;
+}
+
+.searchbox input#search::-webkit-input-placeholder {
+    color: #65737e;
+}
+
+.searchbox .icon {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    z-index: 1;
+    color: #8A92A6;
+}
+
+/* ANIMATION EFFECTS */
+.searchbox input#search:focus,
+.searchbox input#search:active {
+    outline: none;
+    background: #ffffff;
+}

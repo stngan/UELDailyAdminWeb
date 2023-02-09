@@ -86,10 +86,10 @@ a {
     display: flex;
     align-items: center;
 
-    margin-left: 70px;
-    padding-top: 15px;
+    margin-left: 10%;
+    padding-top: 20px;
 
-    font-size: 22px;
+    font-size: 25px;
     font-weight: 600;
 
     color: #FFF;
@@ -102,7 +102,6 @@ a {
     width: 100%;
 }
 
-
 .content {
     display: flex;
     margin: 0 15px;
@@ -114,12 +113,12 @@ a {
 .loginIlluContainer {
     width: 40%;
     margin-right: 10%;
+    margin-top: 5%;
 }
 
 .loginIlluContainer img {
     width: 100%;
 }
-
 
 /* content right login========================= */
 .loginForm {

@@ -1,0 +1,55 @@
+
+header {
+    position: relative;
+    height: 60px;
+}
+.headerLeft {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.headerRight, 
+.headerRight__Noti, 
+.headerRight__account {
+    display: flex;
+    align-items: center;
+    background: #FFF;
+    border-radius: 10px;
+}
+
+.headerRight__Noti:hover, 
+.headerRight__account:hover {
+    background-color: rgba(240, 243, 248, 0.7);
+}
+
+.headerRight{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.headerRight__Noti {
+    width: 45px;
+    aspect-ratio: 1;
+    margin-right: 5px;
+}
+.headerRight__Noti img {
+    width: 100%;
+}
+
+.avatarContainer {
+    background: #FF6E35;
+    padding: 2px;
+    width: 33px;
+    height: 33px;
+    border-radius: 100%;
+
+    margin-right: 5px;
+
+}
+.avaImage{
+    width: 100%;
+    border-radius: 100%;
+    object-fit: contain;
+}

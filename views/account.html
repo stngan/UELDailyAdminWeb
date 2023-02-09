@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý tài khoản</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/generalComponent.css">
+
+    <!-- import font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Open+Sans:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+
+    <!-- import icon -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .w3-sidebar {
+            background-color: #0C226A;
+            color: #FFFFFF;
+        }
+        .w3-bar-item {
+            padding-top: 12px!important;
+            padding-bottom: 12px!important;
+        }
+        .w3-bar-item:hover {
+            background-color: rgba(152, 155, 183, 0.7) !important;
+            color: #FFFFFF !important;
+        }
+        .sidebarModify {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        /* logo============================ */
+        .logo {
+            display: flex;
+            align-items: center;
+            padding: 10px 0 0 15px;
+
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .logo__imageContainer {
+            width: 40px;
+            margin-right: 15px;
+        }
+        .logo__imageContainer img {
+            width: 100%;
+        }
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+    
+        ::-webkit-scrollbar-thumb {
+            background: #888; 
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+        }
+    </style>
+</head>
+<body onload="w3_open()">
+    <nav 
+        class="w3-sidebar w3-bar-block w3-card w3-animate-left sidebarModify" 
+        style="display:none" id="mySidebar">
+        <div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                <a 
+                    class="logo" 
+                    href="./account.html" 
+                    style="text-decoration: none;">
+
+                    <div class="logo__imageContainer">
+                        <img src="../assets/Logo.svg" alt="">
+                    </div>
+                    <span>UEL Daily</span>
+                </a>
+                
+                <button 
+                    style="width: 20%"
+                    class="w3-bar-item w3-button w3-large"
+                    onclick="w3_close()">
+                    <ion-icon name="chevron-back-outline" style="font-size: 25px;"></ion-icon>
+                </button>
+            </div>
+
+            <a href="./account.html" class="w3-bar-item w3-button">
+                <img src="../assets/sidebar-menuAccount.svg" alt="" style="margin-right: 5px;">
+                Quản lý tài khoản
+            </a>
+            <a href="./notification.html" class="w3-bar-item w3-button">
+                <img src="../assets/sidebar-menuNoti.svg" alt="" style="margin-right: 5px;">
+                Thông báo
+            </a>
+            <a href="./department.html" class="w3-bar-item w3-button">
+                <img src="../assets/sidebar-menuDepart.svg" alt="" style="margin-right: 5px;">
+                Phòng ban
+            </a>
+
+        </div>
+
+        <div>
+            <!-- <img src="../assets/sidebar-effect.svg" alt="" style="width: 180px;"> -->
+
+            <div style="margin-left: 20px;">
+               
+                <iframe src="https://calendar.google.com/calendar/embed?height=200&wkst=2&bgcolor=%23ffffff&ctz=Asia%2FHo_Chi_Minh&showTitle=0&showNav=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&showDate=0&hl=en" style=" border-radius: 10px;" width="230" height="180" frameborder="0" scrolling="no"></iframe>
+
+            </div>
+
+            <hr style="background-color: rgba(180, 209, 255, 1); margin: 30px 15px 10px ;">
+            <a href="../index.html" class="w3-bar-item w3-button">
+                <img src="../assets/sidebar-logout.svg" alt="">
+                Đăng xuất
+            </a>
+        </div>
+
+    </nav>
+
+    <article>
+        <!-- header start -->
+        <header>
+            <button id="openNav" class="headerLeft w3-button w3-xlarge"
+            onclick="w3_open()">&#9776;</button>
+    
+            <div class="headerRight">
+                <button class="btn headerRight__Noti">
+                    <img src="/assets/header-noti.svg" alt="">
+
+                </button>
+    
+                <button class="btn headerRight__account">
+                
+                    <div class="avatarContainer">
+                        <img
+                            class="avaImage"
+                            src="/assets/user.jpg" alt="">
+                    </div>
+    
+                    <b>Song Ngan</b>
+                </button>
+            </div>
+
+        </header>
+        <!-- header end -->
+       
+        <div class="main-container" style="background-color: #F5F5F5;">
+            
+            <div class="modifyContainer">
+                <div>
+                    <button class="btn btnfilterAll">
+                        <img src="../assets/filter.svg" alt="">
+                        Tất cả
+                    </button>
+
+
+                </div>
+
+                <div>
+                    <div class="searchbox">
+                        <span class="icon">
+                            <ion-icon name="search-outline" style="font-size: 15px;"></ion-icon>
+                        </span>
+                        <input type="search" id="search" placeholder="Tìm kiếm" />
+                    </div>
+                    
+                </div>
+
+
+            </div>
+
+
+            <div>
+
+                <div class="table-heading">
+                    
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </article>
+
+    <script>
+        function w3_open() {
+          document.getElementsByTagName("article")[0].style.marginLeft = "20%";
+          document.getElementById("mySidebar").style.width = "20%";
+          document.getElementById("mySidebar").style.display = "flex";
+          document.getElementById("openNav").style.display = 'none';
+        }
+        function w3_close() {
+          document.getElementsByTagName("article")[0].style.marginLeft = "0%";
+          document.getElementById("mySidebar").style.display = "none";
+          document.getElementById("openNav").style.display = "inline-block";
+        }
+    </script>
+</body>
+</html>
