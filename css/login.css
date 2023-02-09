@@ -1,0 +1,220 @@
+@import url(//fonts.googleapis.com/css?family=Lato:300:400);
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+}
+a {
+    text-decoration: none;
+}
+
+/* waveBackground===================================== */
+.waveBackgroundContainer {
+    position: relative;
+
+    background: linear-gradient(60deg, rgba(39, 51, 90, 1) 0%, rgba(59, 50, 239, 0.66) 100%);
+    color: white;
+    z-index: 1;
+}
+.inner-header {
+    height: 20vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.waves {
+    position: relative;
+    width: 100%;
+    height: 7vh;
+    margin-bottom: -7px;
+    min-height: 100px;
+    max-height: 150px;
+}
+.parallax>use {
+    animation: move-forever 30s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+.parallax>use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 12s;
+}
+.parallax>use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 15s;
+}
+.parallax>use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 18s;
+}
+.parallax>use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 25s;
+}
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+@media (max-width: 768px) {
+    .waves {
+        height: 40px;
+        min-height: 40px;
+    }
+    .content {
+        height: 30vh;
+    }
+    h1 {
+        font-size: 24px;
+    }
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    /* background: #00000046; */
+}
+
+/* logo============================ */
+.logo {
+    display: flex;
+    align-items: center;
+
+    margin-left: 70px;
+    padding-top: 15px;
+
+    font-size: 22px;
+    font-weight: 600;
+
+    color: #FFF;
+}
+.logo__imageContainer {
+    width: 50px;
+    margin-right: 15px;
+}
+.logo__imageContainer img {
+    width: 100%;
+}
+
+
+.content {
+    display: flex;
+    margin: 0 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* content left =====================*/
+.loginIlluContainer {
+    width: 40%;
+    margin-right: 10%;
+}
+
+.loginIlluContainer img {
+    width: 100%;
+}
+
+
+/* content right login========================= */
+.loginForm {
+    display: flex;
+    background: #FFF;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px rgba(0, 101, 255, 0.25);
+}
+form {
+    width: 360px;
+}
+
+.btnLogin {
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background: #000AFF;
+    box-shadow: 0px 4px 26px rgba(0, 0, 0, 0.25);
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.formSection {
+    margin-top: 30px;
+}
+
+.formSection__Title {
+    color: #999999;
+    font-size: 14px;
+}
+
+.formSection__Input {
+    border-bottom: 1px solid #999999;
+    padding-bottom: 5px;
+    /* margin-top: 15px; */
+    /* margin-bottom: 20px; */
+    display: flex;
+    align-items: center;
+}
+
+.formSection__Input:hover,
+.formSection__Input:focus {
+    border-bottom: 1px solid #000842;
+}
+
+.formSection__Input img {
+    padding-bottom: 3px;
+}
+
+.formSection__Input--input {
+    border: 0;
+    outline: 0;
+    flex-grow: 1;
+    height: 28px;
+    font-size: 1rem;
+    margin-left: 5px;
+    color: #000842;
+}
+
+.formSection__Input--input::placeholder {
+    color: #636363;
+    font-weight: 500;
+}
+
+.centerVertical {
+    display: flex;
+    align-items: center;
+}
+
+#eye i {
+    cursor: pointer;
+    color: #ABABAB;
+}
+#eye i:hover {
+    color: #000842;
+}
+
+/* remember me forgot pass */
+.modifyLogin {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0 50px 0;
+    color: #4D4D4D;
+}
+
+.modifyLogin a {
+    
+    color: #4D4D4D;
+}
+
+input[type=checkbox] {
+    transform: scale(1.15);
+}
