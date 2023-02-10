@@ -87,7 +87,7 @@
 
                 <div class="loginForm">
                     <!-- https://github.com/sefyudem/Responsive-Login-Form/blob/master/index.html -->
-                    <form action="index.html">
+                    <form action="index.html" id="form-sign">
                     
                         <div class="formHeading">
                             <h1 class="title">Sign in</h1>
@@ -108,10 +108,12 @@
                                 <img src="./assets/login-email.svg" alt="">
                                 
                                 <input 
+                                    id="emailinput"
                                     class="formSection__Input--input" type="text" 
                                     placeholder="Enter your email address">
                             </div>
                             
+                            <span class="form-message"></span>
 
                         </div>
 
@@ -122,6 +124,7 @@
                                 <img src="./assets/login-pass.svg" alt="">
                                 
                                 <input 
+                                    id="passinput"
                                     class="formSection__Input--input" type="password" 
                                     placeholder="Enter your Password">
                                     
@@ -130,6 +133,7 @@
                                 </div>
                             </div>
 
+                            <span class="form-message"></span>
                         </div>
 
                         <div class="modifyLogin">
@@ -144,8 +148,10 @@
                             
                         </div>
 
-                        <input type="submit" class="btnLogin" value="Login">
-
+                        <!-- <input type="submit" class="btnLogin" value="Login"> -->
+                        <a class="btn btnLogin"  href="./views/account.html" >
+                           Login
+                        </a>
                     </form>
                 </div>
             </div>
@@ -153,6 +159,22 @@
         </div>
         
     </div>
-   
+
+
+    <script src="/js/validator.js"></script>
+    <script>
+        Validator ({
+            form: '#form-sign',
+            formGroupSelector: '.formSection',
+            errorSelector: '.form-message',
+            rules: [
+            Validator.isEmail('#emailinput'),
+            Validator.minLength('#passinput', 8),
+            Validator.isRequired('#passinput')
+          ],
+        });
+        
+
+    </script>
 </body>
 </html>

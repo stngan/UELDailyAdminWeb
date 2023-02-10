@@ -1,0 +1,63 @@
+[
+    {
+        "accNum": 1,
+        "accEmail": "ngannst20406c@st.uel.edu.vn",
+        "accID": "K204060305",
+        "accStatus": [ "Active", "Deactive"]
+    },
+    {
+        "accNum": 2,
+        "accEmail": "huyenntp20406c@st.uel.edu.vn",
+        "accID": "K204061431",
+        "accStatus": [ "Active", "Deactive"]
+    },
+    {
+        "accNum": 3,
+        "accEmail": "binhtt20406c@st.uel.edu.vn",
+        "accID": "K204061426",
+        "accStatus": [ "Active", "Deactive"]
+    },
+    {
+        "accNum": 4,
+        "accEmail": "hunglv20406c@st.uel.edu.vn",
+        "accID": "K204061431",
+        "accStatus": [ "Active", "Deactive"]
+    },
+    {
+        "accNum": 5,
+        "accEmail": "ngocntb20406c@st.uel.edu.vn",
+        "accID": "K204061437",
+        "accStatus": [ "Active", "Deactive"]
+    },
+    {
+        "accNum": 6,
+        "accEmail": "thanhhd20406c@st.uel.edu.vn",
+        "accID": "K204060308",
+        "accStatus": [ "Active", "Deactive"]
+    },
+    {
+        "accNum": 7,
+        "accEmail": "quynhln20406c@st.uel.edu.vn",
+        "accID": "K204060306",
+        "accStatus": [ "Active", "Deactive"]
+    },
+    {
+        "accNum": 8,
+        "accEmail": "thaottt20406c@st.uel.edu.vn",
+        "accID": "K204061447",
+        "accStatus": [ "Active", "Deactive"]
+    },
+    {
+        "accNum": 9,
+        "accEmail": "tinhnh20406c@st.uel.edu.vn",
+        "accID": "K204061451",
+        "accStatus": [ "Active", "Deactive"]
+    },
+    {
+        "accNum": 10,
+        "accEmail": "tructt20406c@st.uel.edu.vn",
+        "accID": "K204060310",
+        "accStatus": [ "Active", "Deactive"]
+    }
+
+]

@@ -9,7 +9,7 @@
 .main-container {
     height: 100vh;
     padding: 2%;
-   
+    font-family: 'Roboto', sans-serif; 
 }
 
 .modifyContainer {
@@ -39,6 +39,7 @@
     height: 35px;
     background: #FFFFFF;
     border: 1px solid var(--border-color);
+    outline: none;
     font-size: 0.8rem;
     float: left;
     color: #262626;
@@ -60,9 +61,73 @@
     color: #8A92A6;
 }
 
-/* ANIMATION EFFECTS */
-.searchbox input#search:focus,
-.searchbox input#search:active {
-    outline: none;
-    background: #ffffff;
+/* table */
+.tableContainer {
+    margin-top: 20px;
+    height: 60vh;
+}
+.table-heading {
+    background-color: #EAECF0; 
+    color: #8A92A6;
+    border-radius: 5px 5px 0 0;
+    font-size: 12px;
+}
+.table-body {
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+
+    overflow: scroll;
+}
+
+.display-row, .item {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #EAECF0;
+}
+.item {
+    background: #FFFFFF;
+}
+.item:last-child {
+    border-radius: 0 0 5px 5px;
+}
+.item-stt {
+    text-align: center;
+
+}
+
+.item .item-status p {
+    text-align: center;
+    background: #F1F7FF;
+    color: #0065FF;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 5px 10px;
+}
+
+.col-checkbox {
+    min-width: 80px;
+    text-align: center;
+}
+.col-button {
+    min-width: 80px;
+    background: none;
+    text-align: center;
+}
+input[type='checkbox'] {
+    transform: scale(1.25);
+   
+}   
+.col-longtext {
+    min-width: 250px;
+    padding-right: 5px;
+    /* background: rebeccapurple; */
+}
+.col-shorttext {
+    min-width: 150px;
+    /* background: rgb(68, 153, 51); */
+}
+.col-veryshorttext {
+    min-width: 100px;
+    /* background: rgb(68, 153, 51); */
 }

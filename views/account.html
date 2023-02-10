@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lý tài khoản</title>
 
+    <!-- javascript -->
+    <script src="../js/generalComponent.js"></script>
+    <script src="../js/account.js"></script>
+
     <!-- css -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
@@ -78,7 +82,7 @@
         }
     </style>
 </head>
-<body onload="w3_open()">
+<body onload="w3_open(); ">
     <nav 
         class="w3-sidebar w3-bar-block w3-card w3-animate-left sidebarModify" 
         style="display:none" id="mySidebar">
@@ -172,7 +176,6 @@
                         Tất cả
                     </button>
 
-
                 </div>
 
                 <div>
@@ -185,14 +188,75 @@
                     
                 </div>
 
-
             </div>
 
 
-            <div>
+            <div class="tableContainer">
 
-                <div class="table-heading">
-                    
+                <div class="table-heading display-row">
+
+                    <div class="col-checkbox">
+                        <input type="checkbox" name="" id="">
+                    </div>
+
+                    <div class="col-veryshorttext item-stt">
+                        <p>STT</p>
+                    </div>
+
+                    <div class="col-longtext">
+                        <p>Tài khoản</p>
+                    </div>
+
+                    <div class="col-shorttext">
+                        <p>ID</p>
+                    </div>
+
+                    <div class="col-shorttext item-status">
+                        <p>Trạng thái</p>
+                    </div>
+
+                    <div class="col-button">
+                        <p>Sửa</p>
+                    </div>
+
+                    <div class="col-button">
+                        <p>Xóa</p>
+                    </div>
+                </div>
+
+                <div class="table-body" id="tableContent">
+
+                    <div class="item">
+                        
+                        <div class="col-checkbox">
+                            <input type="checkbox" name="" id="">
+                        </div>
+    
+                        <div class="col-veryshorttext item-stt">
+                            <p>STT</p>
+                        </div>
+    
+                        <div class="col-longtext item-account">
+                            <p>Tài khoản</p>
+                        </div>
+    
+                        <div class="col-shorttext item-id">
+                            <p>ID</p>
+                        </div>
+    
+                        <div class="col-shorttext item-status">
+                            <p>Trạng thái</p>
+                        </div>
+    
+                        <button class="btn col-button">
+                            <img src="../assets/btnEdit.svg" alt="">
+                        </button>
+                        
+                        <button class="btn col-button">
+                            <img src="../assets/btnDelete.svg" alt="">
+                        </button>
+                    </div>
+
 
                 </div>
 
@@ -202,18 +266,6 @@
 
     </article>
 
-    <script>
-        function w3_open() {
-          document.getElementsByTagName("article")[0].style.marginLeft = "20%";
-          document.getElementById("mySidebar").style.width = "20%";
-          document.getElementById("mySidebar").style.display = "flex";
-          document.getElementById("openNav").style.display = 'none';
-        }
-        function w3_close() {
-          document.getElementsByTagName("article")[0].style.marginLeft = "0%";
-          document.getElementById("mySidebar").style.display = "none";
-          document.getElementById("openNav").style.display = "inline-block";
-        }
-    </script>
+   
 </body>
 </html>
