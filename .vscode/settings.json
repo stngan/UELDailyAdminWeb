@@ -1,3 +1,4 @@
 {
-    "prettier.tabWidth": 1
+    "prettier.tabWidth": 1,
+    "editor.hover.sticky": false
 }

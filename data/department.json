@@ -1,0 +1,37 @@
+[
+    {
+        "unitName": "PHÒNG Tuyển sinh và Công tác sinh viên UEL",
+        "unitType": ["Phòng ban", "Văn phòng khoa"],
+        "unitEmail": "phongctsv@uel.edu.vn"
+    },
+    {
+        "unitName": "PHÒNG Hợp tác Phát triển UEL",
+        "unitType": ["Phòng ban", "Văn phòng khoa"],
+        "unitEmail": "phonghtpt@uel.edu.vn"
+    },
+    {
+        "unitName": "PHÒNG Đào tạo UEL",
+        "unitType": ["Phòng ban", "Văn phòng khoa"],
+        "unitEmail": "phongdt@uel.edu.vn"
+    },
+    {
+        "unitName": "KHOA Toán Kinh tế UEL",
+        "unitType": ["Phòng ban", "Văn phòng khoa"],
+        "unitEmail": "khoatkt@uel.edu.vn"
+    },
+    {
+        "unitName": "KHOA Hệ thống thông tin UEL",
+        "unitType": ["Phòng ban", "Văn phòng khoa"],
+        "unitEmail": "khoahttt@uel.edu.vn"
+    },
+    {
+        "unitName": "KHOA Kế toán - Kiểm toán UEL",
+        "unitType": ["Phòng ban", "Văn phòng khoa"],
+        "unitEmail": "khoaktkt@uel.edu.vn"
+    },
+    {
+        "unitName": "KHOA Luật UEL",
+        "unitType": ["Phòng ban", "Văn phòng khoa"],
+        "unitEmail": "khoaluat@uel.edu.vn"
+    }
+]

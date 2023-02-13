@@ -8,7 +8,6 @@
 
     <!-- javascript -->
     <script src="../js/generalComponent.js"></script>
-    <script src="../js/account.js"></script>
 
     <!-- css -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -22,7 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Open+Sans:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- favicon -->
-    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
 
     <!-- import icon -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
@@ -82,10 +81,11 @@
         }
     </style>
 </head>
-<body onload="w3_open(); ">
+<body onload="w3_open()">
     <nav 
         class="w3-sidebar w3-bar-block w3-card w3-animate-left sidebarModify" 
-        style="display:none" id="mySidebar">
+        style="display: none; transition: all .3s;" id="mySidebar">
+
         <div>
             <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
                 <a 
@@ -107,7 +107,7 @@
                 </button>
             </div>
 
-            <a href="./account.html" class="w3-bar-item w3-button">
+            <a href="./account.html" class="w3-bar-item w3-button" style="background-color: rgba(152, 155, 183, 0.7)">
                 <img src="../assets/sidebar-menuAccount.svg" alt="" style="margin-right: 5px;">
                 Quản lý tài khoản
             </a>
@@ -123,14 +123,7 @@
         </div>
 
         <div>
-            <!-- <img src="../assets/sidebar-effect.svg" alt="" style="width: 180px;"> -->
-
-            <div style="margin-left: 20px;">
-               
-                <iframe src="https://calendar.google.com/calendar/embed?height=200&wkst=2&bgcolor=%23ffffff&ctz=Asia%2FHo_Chi_Minh&showTitle=0&showNav=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&showDate=0&hl=en" style=" border-radius: 10px;" width="230" height="180" frameborder="0" scrolling="no"></iframe>
-
-            </div>
-
+            <img src="../assets/sidebar-effect.svg" alt="" style="width: 180px;">
             <hr style="background-color: rgba(180, 209, 255, 1); margin: 30px 15px 10px ;">
             <a href="../index.html" class="w3-bar-item w3-button">
                 <img src="../assets/sidebar-logout.svg" alt="">
@@ -171,9 +164,14 @@
             
             <div class="modifyContainer">
                 <div>
-                    <button class="btn btnfilterAll">
-                        <img src="../assets/filter.svg" alt="">
+                    <button class="btn btnModify btnfilterAll">
+                        <img src="../assets/modify_filter.svg" alt="">
                         Tất cả
+                    </button>
+                    
+                    <button class="btn btnModify btnDeleteTableItem">
+                        <img src="../assets/modify_delete.svg" alt="">
+                        Xóa
                     </button>
 
                 </div>
@@ -189,7 +187,6 @@
                 </div>
 
             </div>
-
 
             <div class="tableContainer">
 
@@ -226,46 +223,67 @@
 
                 <div class="table-body" id="tableContent">
 
+                   
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <script>
+        
+    fetch("../data/account.json")
+        .then(function (res) {
+            if (!res.ok) {
+                throw Error("Http Error: ", res.status);
+            }
+            return res.json();
+        })
+        .then(function (dataAccount) {
+            let html = "";
+            for (let i = 0; i < dataAccount.length; i++) {
+
+                html += `
                     <div class="item">
                         
                         <div class="col-checkbox">
-                            <input type="checkbox" name="" id="">
+                            <input type="checkbox" name="" id="$dataAccount[i].{accNum}">
                         </div>
-    
+
                         <div class="col-veryshorttext item-stt">
-                            <p>STT</p>
+                            <p>${dataAccount[i].accNum}</p>
                         </div>
-    
+
                         <div class="col-longtext item-account">
-                            <p>Tài khoản</p>
+                            <p>${dataAccount[i].accEmail}</p>
                         </div>
-    
+
                         <div class="col-shorttext item-id">
-                            <p>ID</p>
+                            <p>${dataAccount[i].accID}</p>
                         </div>
-    
+
                         <div class="col-shorttext item-status">
-                            <p>Trạng thái</p>
+                            <p>${dataAccount[i].accStatus[0]}</p>
                         </div>
-    
-                        <button class="btn col-button">
+
+                        <button 
+                            class="btn col-button" 
+                            onclick="alert('Editing account ID = ${dataAccount[i].accID}')">
+                            
                             <img src="../assets/btnEdit.svg" alt="">
                         </button>
-                        
-                        <button class="btn col-button">
+                    
+                        <button 
+                            class="btn col-button" 
+                            onclick="alert('Delete account ID = ${dataAccount[i].accID} ?')">
+                            
                             <img src="../assets/btnDelete.svg" alt="">
                         </button>
+                    
                     </div>
-
-
-                </div>
-
-
-            </div>
-        </div>
-
-    </article>
-
-   
+                    `
+            }
+            document.getElementById("tableContent").innerHTML = html;
+        })
+    </script>
 </body>
 </html>

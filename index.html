@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Đăng nhập</title>
 
     <!-- css link -->
     <link rel="stylesheet" href="./css/login.css">
@@ -90,19 +90,19 @@
                     <form action="index.html" id="form-sign">
                     
                         <div class="formHeading">
-                            <h1 class="title">Sign in</h1>
-                            <p>If you don't have an account register</p>
+                            <h1 class="title">Đăng nhập</h1>
+                            <p>Nếu bạn chưa có tài khoản để đăng nhập</p>
                             <span>
-                                You can
+                                Bạn có thể
                                 <a href="#" style="color: #0065FF;">
-                                    Register here !
+                                    Đăng ký tại đây !
                                 </a>
                             </span>
 
                         </div>
 
                         <div class="formSection">
-                            <p class="formSection__Title">Email</p>
+                            <p class="formSection__Title">Tên đăng nhập</p>
 
                             <div class="formSection__Input">
                                 <img src="./assets/login-email.svg" alt="">
@@ -110,7 +110,7 @@
                                 <input 
                                     id="emailinput"
                                     class="formSection__Input--input" type="text" 
-                                    placeholder="Enter your email address">
+                                    placeholder="stngan32">
                             </div>
                             
                             <span class="form-message"></span>
@@ -118,7 +118,7 @@
                         </div>
 
                         <div class="formSection">
-                            <p class="formSection__Title">Password</p>
+                            <p class="formSection__Title">Mật khẩu</p>
 
                             <div class="formSection__Input">
                                 <img src="./assets/login-pass.svg" alt="">
@@ -126,7 +126,7 @@
                                 <input 
                                     id="passinput"
                                     class="formSection__Input--input" type="password" 
-                                    placeholder="Enter your Password">
+                                    placeholder="12345678">
                                     
                                 <div id="eye" class="centerVertical">
                                     <i class="far fa-eye"></i>
@@ -139,18 +139,20 @@
                         <div class="modifyLogin">
                             <div class="centerVertical">
                                 <input type="checkbox" name="rememberAccount" id="rememberAccount">
-                                <label for="rememberAccount" style="margin-left: 5px;">Remember me</label>
+                                <label for="rememberAccount" style="margin-left: 5px;">
+                                    Lưu tài khoản 
+                                </label>
                             </div>
  
                             <a href="#" onclick="alert('relax and try to remember your password')">
-                                Forgot Password
+                                Quên mật khẩu?
                             </a>
                             
                         </div>
 
                         <!-- <input type="submit" class="btnLogin" value="Login"> -->
                         <a class="btn btnLogin"  href="./views/account.html" >
-                           Login
+                            Đăng nhập
                         </a>
                     </form>
                 </div>
@@ -168,7 +170,7 @@
             formGroupSelector: '.formSection',
             errorSelector: '.form-message',
             rules: [
-            Validator.isEmail('#emailinput'),
+            // Validator.isEmail('#emailinput'),
             Validator.minLength('#passinput', 8),
             Validator.isRequired('#passinput')
           ],

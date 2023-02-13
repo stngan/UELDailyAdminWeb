@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phòng ban</title>
+    <title>Quản lý tài khoản</title>
+
+    <!-- javascript -->
+    <script src="../js/generalComponent.js"></script>
+    <script src="../js/account.js"></script>
 
     <!-- css -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -18,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Open+Sans:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- favicon -->
-    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
 
     <!-- import icon -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
@@ -63,7 +67,6 @@
         .logo__imageContainer img {
             width: 100%;
         }
-        
         ::-webkit-scrollbar {
             width: 7px;
         }
@@ -82,7 +85,8 @@
 <body onload="w3_open()">
     <nav 
         class="w3-sidebar w3-bar-block w3-card w3-animate-left sidebarModify" 
-        style="display:none" id="mySidebar">
+        style="display: none; transition: all .3s;" id="mySidebar">
+
         <div>
             <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
                 <a 
@@ -104,7 +108,7 @@
                 </button>
             </div>
 
-            <a href="./account.html" class="w3-bar-item w3-button">
+            <a href="./account.html" class="w3-bar-item w3-button" >
                 <img src="../assets/sidebar-menuAccount.svg" alt="" style="margin-right: 5px;">
                 Quản lý tài khoản
             </a>
@@ -112,7 +116,7 @@
                 <img src="../assets/sidebar-menuNoti.svg" alt="" style="margin-right: 5px;">
                 Thông báo
             </a>
-            <a href="./department.html" class="w3-bar-item w3-button">
+            <a href="./department.html" class="w3-bar-item w3-button" style="background-color: rgba(152, 155, 183, 0.7)">
                 <img src="../assets/sidebar-menuDepart.svg" alt="" style="margin-right: 5px;">
                 Phòng ban
             </a>
@@ -120,14 +124,7 @@
         </div>
 
         <div>
-            <!-- <img src="../assets/sidebar-effect.svg" alt="" style="width: 180px;"> -->
-
-            <div style="margin-left: 20px;">
-               
-                <iframe src="https://calendar.google.com/calendar/embed?height=200&wkst=2&bgcolor=%23ffffff&ctz=Asia%2FHo_Chi_Minh&showTitle=0&showNav=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&showDate=0&hl=en" style=" border-radius: 10px;" width="230" height="180" frameborder="0" scrolling="no"></iframe>
-
-            </div>
-
+            <img src="../assets/sidebar-effect.svg" alt="" style="width: 180px;">
             <hr style="background-color: rgba(180, 209, 255, 1); margin: 30px 15px 10px ;">
             <a href="../index.html" class="w3-bar-item w3-button">
                 <img src="../assets/sidebar-logout.svg" alt="">
@@ -168,11 +165,18 @@
             
             <div class="modifyContainer">
                 <div>
-                    <button class="btn btnfilterAll">
-                        <img src="../assets/filter.svg" alt="">
+                    <button class="btn btnModify btnfilterAll">
+                        <img src="../assets/modify_filter.svg" alt="">
                         Tất cả
                     </button>
-
+                    <button class="btn btnModify btnAddNoti">
+                        <img src="../assets/modify_add.svg" alt="">
+                        Tạo mới
+                    </button>
+                    <button class="btn btnModify btnDeleteTableItem">
+                        <img src="../assets/modify_delete.svg" alt="">
+                        Xóa
+                    </button>
 
                 </div>
 
@@ -186,35 +190,153 @@
                     
                 </div>
 
-
             </div>
 
+            <div class="tableContainer">
 
-            <div>
+                <div class="table-heading display-row">
 
-                <div class="table-heading">
+                    <div class="col-checkbox">
+                        <input type="checkbox" name="" id="">
+                    </div>
+
+                    <div class="col-veryshorttext item-stt">
+                        <p>STT</p>
+                    </div>
+
+                    <div class="col-longtext">
+                        <p>Tên đơn vị</p>
+                    </div>
                     
+                    <div class="col-shorttext item-status">
+                        <p>Phân loại</p>
+                    </div>
+                    
+                    <div class="col-shorttext">
+                        <p>Email</p>
+                    </div>
 
+                    <div class="col-button">
+                        <p>Sửa</p>
+                    </div>
+
+                    <div class="col-button">
+                        <p>Xóa</p>
+                    </div>
                 </div>
 
+                <div class="table-body" id="tableContentDepart">
 
+                    <div class="item">
+                        
+                        <div class="col-checkbox">
+                            <input type="checkbox" name="" id="">
+                        </div>
+    
+                        <div class="col-veryshorttext item-stt">
+                            <p>STT</p>
+                        </div>
+    
+                        <div class="col-longtext departmentDonvi">
+                            <img src="../assets/" alt="">
+                            <p>Tên đơn vị</p>
+                        </div>
+                        
+                        <div class="col-shorttext item-status">
+                            <p>Phân loại</p>
+                        </div>
+                        
+                        <div class="col-longtext">
+                            <p>Email</p>
+                        </div>
+    
+                        <div class="col-button">
+                            <p>Sửa</p>
+                        </div>
+    
+                        <div class="col-button">
+                            <p>Xóa</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
     </article>
 
     <script>
-        function w3_open() {
-          document.getElementsByTagName("article")[0].style.marginLeft = "20%";
-          document.getElementById("mySidebar").style.width = "20%";
-          document.getElementById("mySidebar").style.display = "flex";
-          document.getElementById("openNav").style.display = 'none';
-        }
-        function w3_close() {
-          document.getElementsByTagName("article")[0].style.marginLeft = "0%";
-          document.getElementById("mySidebar").style.display = "none";
-          document.getElementById("openNav").style.display = "inline-block";
-        }
+        
+    fetch("../data/department.json")
+        .then(function (res) {
+            if (!res.ok) {
+                throw Error("Http Error: ", res.status);
+            }
+            return res.json();
+        })
+        .then(function (dataDepartment) {
+            let html = "";
+            // for (let i = 0; i < dataDepartment.length; i++) 
+            //     console.log(dataDepartment[i].unitEmail);
+
+
+            for (let i = 0; i < dataDepartment.length; i++) {
+                
+                    html += `
+                    <div class="item">
+                        
+                        <div class="col-checkbox">
+                            <input type="checkbox" name="" id="">
+                        </div>
+    
+                        <div class="col-veryshorttext item-stt">
+                            <p>${i+1}</p>
+                        </div>
+    
+                        <div class="col-longtext departmentDonvi">
+                            <img src="../assets/${dataDepartment[i].unitEmail}.svg" alt="">
+                            <p>${dataDepartment[i].unitName}</p>
+                        </div> 
+                        `
+
+                        if(dataDepartment[i].unitEmail[0] === "p") {
+                            html += `
+                            <div class="col-shorttext item-status">
+                                <p>${dataDepartment[i].unitType[0]}</p>
+                            </div>`
+                        }
+                        else {
+                            html += `
+                            <div class="col-shorttext item-status">
+                                <p>${dataDepartment[i].unitType[1]}</p>
+                            </div>`
+                        }
+                        
+                        html += `
+                        
+                        <div class="col-shorttext">
+                            <p>${dataDepartment[i].unitEmail}</p>
+                        </div>
+
+                        <button 
+                            class="btn col-button" 
+                            onclick="alert('Editing account ID = ${dataDepartment[i].unitEmail}')">
+                            
+                            <img src="../assets/btnEdit.svg" alt="">
+                        </button>
+                    
+                        <button 
+                            class="btn col-button" 
+                            onclick="alert('Delete account ID = ${dataDepartment[i].unitEmail} ?')">
+                            
+                            <img src="../assets/btnDelete.svg" alt="">
+                        </button>
+                    </div>
+                    `
+                }
+
+                
+            
+            document.getElementById("tableContentDepart").innerHTML = html;
+        })
     </script>
 </body>
 </html>
