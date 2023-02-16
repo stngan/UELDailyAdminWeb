@@ -7,7 +7,7 @@
     <title>Thông báo</title>
     
     <!-- javascript -->
-    <script src="../js/generalComponent.js"></script>
+    <script src="../js/generalComponent.js" defer></script>
 
     <!-- css -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -82,6 +82,102 @@
     </style>
 </head>
 <body onload="w3_open()">
+    <div id="modalAddNoti" class="modal">
+
+        <div class="modal-content">
+            <div class="modal-header flexSpace">
+                <h3>Tạo thông báo mới</h3>
+                <ion-icon name="close-outline" class="close"></ion-icon>
+            </div>
+
+            <div class="modal-body">
+                <div class="sectionTitle centerVertical">
+                    <img src="../assets/noti-modal-num1.svg" alt="">
+                    <h4>Thông tin người gửi</h4>
+                </div>
+                
+                <div class="flexSpace">
+                    <div class="col-form input-short">
+                        <label for="section1__emailtitle">
+                            Email gửi thông báo
+                        </label>
+                        <input type="text" name="section1__emailtitle input-short">
+                    </div>
+                    
+                    <div class="col-form input-short">
+                        <label for="section1__sendby">
+                            Người gửi
+                        </label>
+                        <input type="text" name="section1__sendby input-short">
+                    </div>
+                </div>
+                
+                <div class="sectionTitle centerVertical">
+                    <img src="../assets/noti-modal-num2.svg" alt="">
+                    <h4>Nội dung</h4>
+                </div>
+
+                <div class="flexSpace">
+                    <div class="col-form input-short">
+                        <label for="section1__emailtitle">
+                            Phương thức thông báo
+                        </label>
+                        <input type="text" name="section1__emailtitle input-short">
+                    </div>
+
+                    <div class="col-form input-short">
+                        <label for="section1__sendby">
+                            Email người nhận
+                        </label>
+                        <input type="text" name="section1__sendby input-short">
+                    </div>
+                </div>
+              
+                <div class="col-form input-short">
+                    <label for="section1__emailtitle">
+                        Tiêu đề
+                    </label>
+                    <input type="text" name="section1__emailtitle input-short">
+                </div>
+                <div class="col-form input-short">
+                    <label for="section1__emailtitle">
+                        Mô tả 
+                    </label>
+                    <textarea type="text" name="section1__emailtitle input-short"></textarea>
+
+
+                </div>
+
+                
+
+
+
+
+            </div>
+
+
+
+            <div class="modal-footer flexSpace">
+                <div>
+                    <button>
+                        Gửi
+                    </button>
+                </div>
+                
+                <div>
+                    <button>
+                        Lưu
+                    </button>
+                    <button>
+                        Xóa
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
     <nav 
         class="w3-sidebar w3-bar-block w3-card w3-animate-left sidebarModify" 
         style="display:none" id="mySidebar">
@@ -168,7 +264,7 @@
                         <img src="../assets/modify_filter.svg" alt="">
                         Tất cả
                     </button>
-                    <button class="btn btnModify btnAddNoti">
+                    <button class="btn btnModify btnAddNoti" id="myBtn">
                         <img src="../assets/modify_add.svg" alt="">
                         Tạo mới
                     </button>
