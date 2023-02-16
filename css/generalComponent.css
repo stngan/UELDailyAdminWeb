@@ -194,7 +194,7 @@ input[type='checkbox'] {
 
 /* modal================================  */
 .modal {
-    /* display: none; */
+    display: none;
     position: fixed;
     z-index: 3;
     left: 0;
@@ -205,6 +205,7 @@ input[type='checkbox'] {
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
     font-size: 0.8rem;
+    transition: all .5s;
 }
 
 .modal-content {
