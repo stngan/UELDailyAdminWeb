@@ -209,9 +209,11 @@ input[type='checkbox'] {
 
 .modal-content {
     background-color: #fefefe;
-    margin: 10% auto 15% 25%;
+    margin-top: 2%;
+    margin-left: 25%;
 
     width: 60%;
+    height: auto;
 
     border-radius: 10px;
 }
@@ -219,13 +221,14 @@ input[type='checkbox'] {
     color: #FFF;
     background: #000AFF;
     border-radius: 10px;
+    padding: 0 5%;
     
 }
 .modal-content .modal-body {
-    /* padding: 0 2%; */
+    padding: 0 5%;
 }
 .modal-content .modal-body .sectionTitle {
-    padding: 0 5%;
+    padding: 3% 0 1% 3%;
 }
 .modal-content .modal-body .sectionTitle img {
     margin-right: 10px;
@@ -254,7 +257,7 @@ input[type='checkbox'] {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1% 3%;
+    /* padding: 1% 3%; */
 }
 .col-form {
     display: flex;
@@ -267,16 +270,49 @@ input[type='checkbox'] {
 }
 
 #modalAddNoti h4 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
+    margin:  0 !important;
 }
 .input-short {
     width: 350px;
     max-width: 500px;
 }
-input, textarea {
+.input-long {
+    width: 100%;
+}
+input {
     outline: none;
     height: 35px;
     font-size: 1rem;
-    
+}
+textarea {
+    outline: none;
+    height: 80px;
+    font-size: 1rem;
+}
+label {
+    padding-bottom: 7px;
+    padding-top: 15px;
+}
+.modal-button {
+    padding: 3% 0;
+}
+.btnNoti {
+    border-radius: 5px;
+    padding: 5px 35px;
+    outline: none;
+    border: none;
+}
+.btnNoti--submit {
+    background: rgba(0, 101, 255, 0.25);
+    color: #0065FF;
+}
+.btnNoti--save {
+    background: rgba(252, 205, 65, 0.2);
+    color: #FCCD41;
+}
+.btnNoti--reset {
+    background: rgba(255, 110, 53, 0.2);
+    color: #FF6E35;
 }

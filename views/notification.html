@@ -84,7 +84,7 @@
 <body onload="w3_open()">
     <div id="modalAddNoti" class="modal">
 
-        <div class="modal-content">
+        <form class="modal-content">
             <div class="modal-header flexSpace">
                 <h3>Tạo thông báo mới</h3>
                 <ion-icon name="close-outline" class="close"></ion-icon>
@@ -98,16 +98,16 @@
                 
                 <div class="flexSpace">
                     <div class="col-form input-short">
-                        <label for="section1__emailtitle">
+                        <p for="section1__emailtitle">
                             Email gửi thông báo
-                        </label>
+                        </p>
                         <input type="text" name="section1__emailtitle input-short">
                     </div>
                     
                     <div class="col-form input-short">
-                        <label for="section1__sendby">
+                        <p for="section1__sendby">
                             Người gửi
-                        </label>
+                        </p>
                         <input type="text" name="section1__sendby input-short">
                     </div>
                 </div>
@@ -119,61 +119,52 @@
 
                 <div class="flexSpace">
                     <div class="col-form input-short">
-                        <label for="section1__emailtitle">
+                        <p for="section1__emailtitle">
                             Phương thức thông báo
-                        </label>
-                        <input type="text" name="section1__emailtitle input-short">
+                        </p>
+                        <input type="text" name="section1__emailtitle">
                     </div>
 
                     <div class="col-form input-short">
-                        <label for="section1__sendby">
+                        <p for="section1__sendby">
                             Email người nhận
-                        </label>
-                        <input type="text" name="section1__sendby input-short">
+                        </p>
+                        <input type="text" name="section1__sendby">
                     </div>
                 </div>
               
-                <div class="col-form input-short">
-                    <label for="section1__emailtitle">
+                <div class="col-form input-long">
+                    <p for="section1__emailtitle">
                         Tiêu đề
-                    </label>
-                    <input type="text" name="section1__emailtitle input-short">
+                    </p>
+                    <input type="text" name="section1__emailtitle">
                 </div>
-                <div class="col-form input-short">
-                    <label for="section1__emailtitle">
+                <div class="col-form input-long">
+                    <p for="section1__emailtitle">
                         Mô tả 
-                    </label>
-                    <textarea type="text" name="section1__emailtitle input-short"></textarea>
+                    </p>
+                    <textarea type="text" name="section1__emailtitle">
 
+                    </textarea>
 
                 </div>
 
-                
+                <div class="modal-button flexSpace">
+                    <div>
+                        <input class="btnNoti btnNoti--submit" type="submit" value="Gửi">
+                        
+                    </div>
+                    
+                    <div>
+                        <input class="btnNoti btnNoti--save" type="submit"  value="Lưu">
 
-
-
+                        <input class="btnNoti btnNoti--reset" type="reset" value="Xóa">
+                    </div>
+                </div>
 
             </div>
 
-
-
-            <div class="modal-footer flexSpace">
-                <div>
-                    <button>
-                        Gửi
-                    </button>
-                </div>
-                
-                <div>
-                    <button>
-                        Lưu
-                    </button>
-                    <button>
-                        Xóa
-                    </button>
-                </div>
-            </div>
-        </div>
+        </form>
 
     </div>
 
