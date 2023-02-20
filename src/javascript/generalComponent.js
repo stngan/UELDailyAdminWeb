@@ -10,20 +10,7 @@ function w3_close() {
   document.getElementById("openNav").style.display = "inline-block";
 }
 
-
 var modal = document.getElementById("modalAddNoti");
-
-var btn = document.getElementById("myBtn");
-
-var span = document.getElementsByClassName("close")[0];
-
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-span.onclick = function() {
-  modal.style.display = "none";
-}
 
 window.onclick = function(event) {
   if (event.target == modal) {

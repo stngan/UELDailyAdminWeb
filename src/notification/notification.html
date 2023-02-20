@@ -7,13 +7,13 @@
     <title>Thông báo</title>
     
     <!-- javascript -->
-    <script src="../js/generalComponent.js" defer></script>
+    <script src="../javascript/generalComponent.js" defer></script>
 
     <!-- css -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-    <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/generalComponent.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/generalComponent.css">
 
     <!-- import font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,60 +26,7 @@
     <!-- import icon -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
-
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            font-size: 16px;
-            box-sizing: border-box;
-        }
-        .w3-sidebar {
-            background-color: #0C226A;
-            color: #FFFFFF;
-        }
-        .w3-bar-item {
-            padding-top: 12px!important;
-            padding-bottom: 12px!important;
-        }
-        .w3-bar-item:hover {
-            background-color: rgba(152, 155, 183, 0.7) !important;
-            color: #FFFFFF !important;
-        }
-        .sidebarModify {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        /* logo============================ */
-        .logo {
-            display: flex;
-            align-items: center;
-            padding: 10px 0 0 15px;
-
-            font-size: 20px;
-            font-weight: 600;
-        }
-        .logo__imageContainer {
-            width: 40px;
-            margin-right: 15px;
-        }
-        .logo__imageContainer img {
-            width: 100%;
-        }
-        ::-webkit-scrollbar {
-            width: 7px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1; 
-        }
-    
-        ::-webkit-scrollbar-thumb {
-            background: #888; 
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555; 
-        }
-    </style>
+    <link rel="stylesheet" href="./notification.css">
 </head>
 <body onload="w3_open()">
     <div id="modalAddNoti" class="modal">
@@ -193,7 +140,7 @@
                 </button>
             </div>
 
-            <a href="./account.html" class="w3-bar-item w3-button">
+            <a href="../account/account.html" class="w3-bar-item w3-button">
                 <img src="../assets/sidebar-menuAccount.svg" alt="" style="margin-right: 5px;">
                 Quản lý tài khoản
             </a>
@@ -201,7 +148,7 @@
                 <img src="../assets/sidebar-menuNoti.svg" alt="" style="margin-right: 5px;">
                 Thông báo
             </a>
-            <a href="./department.html" class="w3-bar-item w3-button">
+            <a href="../department/department.html" class="w3-bar-item w3-button">
                 <img src="../assets/sidebar-menuDepart.svg" alt="" style="margin-right: 5px;">
                 Phòng ban
             </a>
@@ -212,7 +159,7 @@
             <img src="../assets/sidebar-effect.svg" alt="" style="width: 180px;">
 
             <hr style="background-color: rgba(180, 209, 255, 1); margin: 30px 15px 10px ;">
-            <a href="../index.html" class="w3-bar-item w3-button">
+            <a href="../../index.html" class="w3-bar-item w3-button">
                 <img src="../assets/sidebar-logout.svg" alt="">
                 Đăng xuất
             </a>
@@ -228,7 +175,7 @@
     
             <div class="headerRight">
                 <button class="btn headerRight__Noti">
-                    <img src="/assets/header-noti.svg" alt="">
+                    <img src="../assets/header-noti.svg" alt="">
 
                 </button>
     
@@ -237,7 +184,7 @@
                     <div class="avatarContainer">
                         <img
                             class="avaImage"
-                            src="/assets/user.jpg" alt="">
+                            src="../assets/user.jpg" alt="">
                     </div>
     
                     <b>Song Ngan</b>
@@ -359,85 +306,5 @@
         </div>
 
     </article>
-
-    <script>
-        
-        fetch("../data/notification.json")
-            .then(function (res) {
-                if (!res.ok) {
-                    throw Error("Http Error: ", res.status);
-                }
-                return res.json();
-            })
-            .then(function (dataNoti) {
-                let html = "";
-    
-                for (let i = 0; i < dataNoti.length; i++) {
-                    
-                        html += `
-                        <div class="item">
-                            
-                            <div class="col-checkbox">
-                                <input type="checkbox" name="" id="">
-                            </div>
-        
-                            <div class="col-veryshorttext item-stt">
-                                <p>${i+1}</p>
-                            </div>
-        
-                            <div class="col-longtext departmentDonvi">
-                                <p>${dataNoti[i].title}</p>
-                            </div> 
-
-                            <div class="col-shorttext">
-                                <p>${dataNoti[i].dateCreate}</p>
-                            </div>
-
-                            <div class="col-shorttext">
-                                <p>${dataNoti[i].sendby}</p>
-                            </div>
-                            `
-    
-                            if(dataNoti[i].unitEmail[0] === "p") {
-                                html += `
-                                <div class="col-shorttext item-status">
-                                    <p>${dataNoti[i].unitType[0]}</p>
-                                </div>`
-                            }
-                            else {
-                                html += `
-                                <div class="col-shorttext item-status">
-                                    <p>${dataNoti[i].unitType[1]}</p>
-                                </div>`
-                            }
-                            
-                            html += `
-                            
-                            <div class="col-shorttext">
-                                <p>${dataNoti[i].unitEmail}</p>
-                            </div>
-    
-                            <button 
-                                class="btn col-button" 
-                                onclick="alert('Editing account ID = ${dataNoti[i].unitEmail}')">
-                                
-                                <img src="../assets/btnEdit.svg" alt="">
-                            </button>
-                        
-                            <button 
-                                class="btn col-button" 
-                                onclick="alert('Delete account ID = ${dataNoti[i].unitEmail} ?')">
-                                
-                                <img src="../assets/btnDelete.svg" alt="">
-                            </button>
-                        </div>
-                        `
-                    }
-    
-                    
-                
-                document.getElementById("tableContentDepart").innerHTML = html;
-            })
-        </script>
 </body>
 </html>
