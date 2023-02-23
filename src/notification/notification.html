@@ -1,310 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thông báo</title>
-    
-    <!-- javascript -->
-    <script src="../javascript/generalComponent.js" defer></script>
+ <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thông báo</title>
 
-    <!-- css -->
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- javascript -->
+  <script src="../javascript/generalComponent.js" defer></script>
+  <script src="./notification.js" type="module" defer></script>
 
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/generalComponent.css">
+  <!-- css -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 
-    <!-- import font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Open+Sans:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- favicon -->
-    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../css/header.css" />
+  <link rel="stylesheet" href="../css/generalComponent.css" />
 
-    <!-- import icon -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
-    <link rel="stylesheet" href="./notification.css">
-</head>
-<body onload="w3_open()">
-    <div id="modalAddNoti" class="modal">
+  <!-- import font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+   href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Open+Sans:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap"
+   rel="stylesheet"
+  />
 
-        <form class="modal-content">
-            <div class="modal-header flexSpace">
-                <h3>Tạo thông báo mới</h3>
-                <ion-icon name="close-outline" class="close"></ion-icon>
-            </div>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
 
-            <div class="modal-body">
-                <div class="sectionTitle centerVertical">
-                    <img src="../assets/noti-modal-num1.svg" alt="">
-                    <h4>Thông tin người gửi</h4>
-                </div>
-                
-                <div class="flexSpace">
-                    <div class="col-form input-short">
-                        <p for="section1__emailtitle">
-                            Email gửi thông báo
-                        </p>
-                        <input type="text" name="section1__emailtitle input-short">
-                    </div>
-                    
-                    <div class="col-form input-short">
-                        <p for="section1__sendby">
-                            Người gửi
-                        </p>
-                        <input type="text" name="section1__sendby input-short">
-                    </div>
-                </div>
-                
-                <div class="sectionTitle centerVertical">
-                    <img src="../assets/noti-modal-num2.svg" alt="">
-                    <h4>Nội dung</h4>
-                </div>
-
-                <div class="flexSpace">
-                    <div class="col-form input-short">
-                        <p for="section1__emailtitle">
-                            Phương thức thông báo
-                        </p>
-                        <input type="text" name="section1__emailtitle">
-                    </div>
-
-                    <div class="col-form input-short">
-                        <p for="section1__sendby">
-                            Email người nhận
-                        </p>
-                        <input type="text" name="section1__sendby">
-                    </div>
-                </div>
-              
-                <div class="col-form input-long">
-                    <p for="section1__emailtitle">
-                        Tiêu đề
-                    </p>
-                    <input type="text" name="section1__emailtitle">
-                </div>
-                <div class="col-form input-long">
-                    <p for="section1__emailtitle">
-                        Mô tả 
-                    </p>
-                    <textarea type="text" name="section1__emailtitle">
-
-                    </textarea>
-
-                </div>
-
-                <div class="modal-button flexSpace">
-                    <div>
-                        <input class="btnNoti btnNoti--submit" type="submit" value="Gửi">
-                        
-                    </div>
-                    
-                    <div>
-                        <input class="btnNoti btnNoti--save" type="submit"  value="Lưu">
-
-                        <input class="btnNoti btnNoti--reset" type="reset" value="Xóa">
-                    </div>
-                </div>
-
-            </div>
-
-        </form>
-
+  <!-- import icon -->
+  <script
+   type="module"
+   src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+   defer
+  ></script>
+  <script
+   nomodule
+   src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+   defer
+  ></script>
+  <link rel="stylesheet" href="./notification.css" />
+ </head>
+ <body onload="w3_open()">
+  <div id="modalAddNoti" class="modal">
+   <div class="modal-content">
+    <div class="modal-header flexSpace">
+     <h3>Tạo thông báo mới</h3>
+     <ion-icon name="close-outline" class="close"></ion-icon>
     </div>
 
+    <div class="modal-body">
+     <div class="sectionTitle centerVertical">
+      <img src="../assets/noti-modal-num1.svg" alt="" />
+      <h4>Thông tin người gửi</h4>
+     </div>
 
-    <nav 
-        class="w3-sidebar w3-bar-block w3-card w3-animate-left sidebarModify" 
-        style="display:none" id="mySidebar">
-        <div>
-            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-                <a 
-                    class="logo" 
-                    href="./account.html" 
-                    style="text-decoration: none;">
+     <div class="flexSpace">
+      <div class="col-form input-short">
+       <p for="section1__emailtitle">Email gửi thông báo</p>
+       <input type="text" name="section1__emailtitle input-short" />
+      </div>
 
-                    <div class="logo__imageContainer">
-                        <img src="../assets/Logo.svg" alt="">
-                    </div>
-                    <span>UEL Daily</span>
-                </a>
-                
-                <button 
-                    style="width: 20%"
-                    class="w3-bar-item w3-button w3-large"
-                    onclick="w3_close()">
-                    <ion-icon name="chevron-back-outline" style="font-size: 25px;"></ion-icon>
-                </button>
-            </div>
+      <div class="col-form input-short">
+       <p for="section1__sendby">Người gửi</p>
+       <input type="text" name="section1__sendby input-short" />
+      </div>
+     </div>
 
-            <a href="../account/account.html" class="w3-bar-item w3-button">
-                <img src="../assets/sidebar-menuAccount.svg" alt="" style="margin-right: 5px;">
-                Quản lý tài khoản
-            </a>
-            <a href="./notification.html" class="w3-bar-item w3-button" style="background-color: rgba(152, 155, 183, 0.7)">
-                <img src="../assets/sidebar-menuNoti.svg" alt="" style="margin-right: 5px;">
-                Thông báo
-            </a>
-            <a href="../department/department.html" class="w3-bar-item w3-button">
-                <img src="../assets/sidebar-menuDepart.svg" alt="" style="margin-right: 5px;">
-                Phòng ban
-            </a>
+     <div class="sectionTitle centerVertical">
+      <img src="../assets/noti-modal-num2.svg" alt="" />
+      <h4>Nội dung</h4>
+     </div>
 
-        </div>
+     <div class="flexSpace">
+      <div class="col-form input-short">
+       <p for="section1__emailtitle">Phương thức thông báo</p>
+       <input type="text" name="section1__emailtitle" />
+      </div>
 
-        <div>
-            <img src="../assets/sidebar-effect.svg" alt="" style="width: 180px;">
+      <div class="col-form input-short">
+       <p for="section1__sendby">Email người nhận</p>
+       <input type="text" name="section1__sendby" />
+      </div>
+     </div>
 
-            <hr style="background-color: rgba(180, 209, 255, 1); margin: 30px 15px 10px ;">
-            <a href="../../index.html" class="w3-bar-item w3-button">
-                <img src="../assets/sidebar-logout.svg" alt="">
-                Đăng xuất
-            </a>
-        </div>
+     <div class="col-form input-long">
+      <p for="section1__emailtitle">Tiêu đề</p>
+      <input type="text" name="section1__emailtitle" id="notiTitle"/>
+     </div>
+     <div class="col-form input-long">
+      <p for="section1__emailtitle">Mô tả</p>
+      <textarea type="text" name="section1__emailtitle" id="notiDescription"> </textarea>
+     </div>
 
-    </nav>
+     <div class="modal-button flexSpace">
+      <div>
+       <input class="btnNoti btnNoti--submit" id="btnNoti--submit" type="submit" value="Gửi" />
+      </div>
 
-    <article>
-        <!-- header start -->
-        <header>
-            <button id="openNav" class="headerLeft w3-button w3-xlarge"
-            onclick="w3_open()">&#9776;</button>
-    
-            <div class="headerRight">
-                <button class="btn headerRight__Noti">
-                    <img src="../assets/header-noti.svg" alt="">
+      <div>
+       <input class="btnNoti btnNoti--save" type="submit" value="Lưu" />
 
-                </button>
-    
-                <button class="btn headerRight__account">
-                
-                    <div class="avatarContainer">
-                        <img
-                            class="avaImage"
-                            src="../assets/user.jpg" alt="">
-                    </div>
-    
-                    <b>Song Ngan</b>
-                </button>
-            </div>
+       <input class="btnNoti btnNoti--reset" type="reset" value="Xóa" />
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
 
-        </header>
-        <!-- header end -->
-       
-        <div class="main-container" style="background-color: #F5F5F5;">
-            
-            <div class="modifyContainer">
-                <div>
-                    <button class="btn btnModify btnfilterAll">
-                        <img src="../assets/modify_filter.svg" alt="">
-                        Tất cả
-                    </button>
-                    <button class="btn btnModify btnAddNoti" id="myBtn">
-                        <img src="../assets/modify_add.svg" alt="">
-                        Tạo mới
-                    </button>
-                    <button class="btn btnModify btnDeleteTableItem">
-                        <img src="../assets/modify_delete.svg" alt="">
-                        Xóa
-                    </button>
-                </div>
+  <nav
+   class="w3-sidebar w3-bar-block w3-card w3-animate-left sidebarModify"
+   style="display: none"
+   id="mySidebar"
+  >
+   <div>
+    <div
+     style="display: flex; justify-content: space-between; margin-bottom: 10px"
+    >
+     <a class="logo" href="./account.html" style="text-decoration: none">
+      <div class="logo__imageContainer">
+       <img src="../assets/Logo.svg" alt="" />
+      </div>
+      <span>UEL Daily</span>
+     </a>
 
-                <div>
-                    <div class="searchbox">
-                        <span class="icon">
-                            <ion-icon name="search-outline" style="font-size: 15px;"></ion-icon>
-                        </span>
-                        <input type="search" id="search" placeholder="Tìm kiếm" />
-                    </div>
-                    
-                </div>
+     <button
+      style="width: 20%"
+      class="w3-bar-item w3-button w3-large"
+      onclick="w3_close()"
+     >
+      <ion-icon name="chevron-back-outline" style="font-size: 25px"></ion-icon>
+     </button>
+    </div>
 
+    <a href="../account/account.html" class="w3-bar-item w3-button">
+     <img
+      src="../assets/sidebar-menuAccount.svg"
+      alt=""
+      style="margin-right: 5px"
+     />
+     Quản lý tài khoản
+    </a>
+    <a
+     href="./notification.html"
+     class="w3-bar-item w3-button"
+     style="background-color: rgba(152, 155, 183, 0.7)"
+    >
+     <img
+      src="../assets/sidebar-menuNoti.svg"
+      alt=""
+      style="margin-right: 5px"
+     />
+     Thông báo
+    </a>
+    <a href="../department/department.html" class="w3-bar-item w3-button">
+     <img
+      src="../assets/sidebar-menuDepart.svg"
+      alt=""
+      style="margin-right: 5px"
+     />
+     Phòng ban
+    </a>
+   </div>
 
-            </div>
+   <div>
+    <img src="../assets/sidebar-effect.svg" alt="" style="width: 180px" />
 
+    <hr
+     style="background-color: rgba(180, 209, 255, 1); margin: 30px 15px 10px"
+    />
+    <a href="/sessionLogout" class="w3-bar-item w3-button">
+     <img src="../assets/sidebar-logout.svg" alt="" />
+     Đăng xuất
+    </a>
+   </div>
+  </nav>
 
-            <div class="tableContainer">
+  <article>
+   <!-- header start -->
+   <header>
+    <button
+     id="openNav"
+     class="headerLeft w3-button w3-xlarge"
+     onclick="w3_open()"
+    >
+     &#9776;
+    </button>
 
-                <div class="table-heading display-row">
+    <div class="headerRight">
+     <button class="btn headerRight__Noti">
+      <img src="../assets/header-noti.svg" alt="" />
+     </button>
 
-                    <div class="col-checkbox">
-                        <input type="checkbox" name="" id="">
-                    </div>
+     <button class="btn headerRight__account">
+      <div class="avatarContainer">
+       <img class="avaImage" src="../assets/user.jpg" alt="" />
+      </div>
 
-                    <div class="col-veryshorttext">
-                        <p>ID</p>
-                    </div>
+      <b>Song Ngan</b>
+     </button>
+    </div>
+   </header>
+   <!-- header end -->
 
-                    <div class="col-longtext">
-                        <p>Tiêu đề</p>
-                    </div>
+   <div class="main-container" style="background-color: #f5f5f5">
+    <div class="modifyContainer">
+     <div>
+      <button class="btn btnModify btnfilterAll">
+       <img src="../assets/modify_filter.svg" alt="" />
+       Tất cả
+      </button>
+      <button class="btn btnModify btnAddNoti" id="myBtn">
+       <img src="../assets/modify_add.svg" alt="" />
+       Tạo mới
+      </button>
+      <button class="btn btnModify btnDeleteTableItem">
+       <img src="../assets/modify_delete.svg" alt="" />
+       Xóa
+      </button>
+     </div>
 
-                    <div class="col-shorttext">
-                        <p>Ngày tạo</p>
-                    </div>
-                    
-                    <div class="col-shorttext">
-                        <p>Người gửi</p>
-                    </div>
-                  
-                    
-                    <div class="col-veryshorttext item-status">
-                        <p>Trạng thái</p>
-                    </div>
-                    
-                    <div class="col-button">
-                        <p>Sửa</p>
-                    </div>
+     <div>
+      <div class="searchbox">
+       <span class="icon">
+        <ion-icon name="search-outline" style="font-size: 15px"></ion-icon>
+       </span>
+       <input type="search" id="search" placeholder="Tìm kiếm" />
+      </div>
+     </div>
+    </div>
 
-                    <div class="col-button">
-                        <p>Xóa</p>
-                    </div>
-                </div>
+    <div class="tableContainer">
+     <div class="table-heading display-row">
+      <div class="col-checkbox">
+       <input type="checkbox" name="" id="" />
+      </div>
 
-                <div class="table-body" id="tableContentDepart">
+      <div class="col-veryshorttext">
+       <p>ID</p>
+      </div>
 
-                    <div class="item">
-                        
-                        <div class="col-checkbox">
-                            <input type="checkbox" name="" id="">
-                        </div>
-    
-                        <div class="col-veryshorttext">
-                            <p>ID</p>
-                        </div>
-    
-                        <div class="col-longtext">
-                            <p>Tiêu đề</p>
-                        </div>
-    
-                        <div class="col-shorttext">
-                            <p>Ngày tạo</p>
-                        </div>
-                        
-                        <div class="col-shorttext">
-                            <p>Người gửi</p>
-                        </div>
-                     
-                        
-                        <div class="col-veryshorttext item-status">
-                            <p>Trạng thái</p>
-                        </div>
-                        
-                        <div class="col-button">
-                            <p>Sửa</p>
-                        </div>
-    
-                        <div class="col-button">
-                            <p>Xóa</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="col-longtext">
+       <p>Tiêu đề</p>
+      </div>
 
-    </article>
-</body>
+      <div class="col-shorttext">
+       <p>Ngày tạo</p>
+      </div>
+
+      <div class="col-shorttext">
+       <p>Người gửi</p>
+      </div>
+
+      <div class="col-veryshorttext item-status">
+       <p>Trạng thái</p>
+      </div>
+
+      <div class="col-button">
+       <p>Sửa</p>
+      </div>
+
+      <div class="col-button">
+       <p>Xóa</p>
+      </div>
+     </div>
+
+     <div class="table-body" id="tableContentDepart">
+      <div class="item">
+       <div class="col-checkbox">
+        <input type="checkbox" name="" id="" />
+       </div>
+
+       <div class="col-veryshorttext">
+        <p>ID</p>
+       </div>
+
+       <div class="col-longtext">
+        <p>Tiêu đề</p>
+       </div>
+
+       <div class="col-shorttext">
+        <p>Ngày tạo</p>
+       </div>
+
+       <div class="col-shorttext">
+        <p>Người gửi</p>
+       </div>
+
+       <div class="col-veryshorttext item-status">
+        <p>Trạng thái</p>
+       </div>
+
+       <div class="col-button">
+        <p>Sửa</p>
+       </div>
+
+       <div class="col-button">
+        <p>Xóa</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </article>
+  <script defer>
+   var modal = document.getElementById("modalAddNoti");
+   var btn = document.getElementById("myBtn");
+   var span = document.getElementsByClassName("close")[0];
+   btn.onclick = function () {
+    modal.style.display = "block";
+   };
+   span.onclick = function () {
+    modal.style.display = "none";
+   };
+   window.onclick = function (event) {
+    if (event.target == modal) {
+     modal.style.display = "none";
+    }
+   };
+  </script>
+ </body>
 </html>

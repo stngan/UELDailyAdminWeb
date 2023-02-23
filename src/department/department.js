@@ -6,7 +6,29 @@ import {
   update,
   remove,
 } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
-import { db } from "../javascript/firebase.js";
+import {
+  getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInAnonymously,
+  onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+import {
+  getDatabase,
+} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBjbh21ZzLPZXs89b8U_BLhsh2VuB_GiJI",
+  authDomain: "ueldaily-hubing.firebaseapp.com",
+  databaseURL:
+    "https://ueldaily-hubing-default-rtdb.asia-southeast1.firebasedatabase.app/",
+  projectId: "ueldaily-hubing",
+  storageBucket: "ueldaily-hubing.appspot.com",
+  messagingSenderId: "204536961808",
+  appId: "1:204536961808:web:5b876635f3d1c3fd526395",
+};
+const app = initializeApp(firebaseConfig);
+const db = getDatabase();
+const auth = getAuth();
+
 function insertData(index) {
   let departmentName = prompt("Please enter name");
   let departmentEmail = prompt("Please enter email");
@@ -15,7 +37,7 @@ function insertData(index) {
     email: departmentEmail
   })
     .then(() => {
-      alert("Data added successfully");
+      // alert("Data added successfully");
     })
     .catch((error) => {
       alert(error);
@@ -147,7 +169,7 @@ function updateData(xIndex, xName, xEmail) {
       email: departmentEmail,
     })
       .then(() => {
-        alert("Data updated successfully");
+        // alert("Data updated successfully");
       })
       .catch((error) => {
         alert(error);

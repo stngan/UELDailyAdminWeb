@@ -1,0 +1,33 @@
+{
+  "name": "ueldaily_administrator_web_application",
+  "version": "1.0.0",
+  "description": "This is the demo version",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stngan/UELDailyAdminWeb.git"
+  },
+  "keywords": [
+    "ueldaily"
+  ],
+  "author": "Hung Le Viet, Binh Tran Thanh, Ngan Ngo Song Tuyet, Huyen Nguyen Thi Phuong, Ngoc Phan Thi Bich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stngan/UELDailyAdminWeb/issues"
+  },
+  "homepage": "https://github.com/stngan/UELDailyAdminWeb#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cookie-parser": "^1.4.6",
+    "csurf": "^1.11.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "firebase": "^9.17.1",
+    "firebase-admin": "^11.5.0",
+    "nodemon": "^2.0.20"
+  }
+}
