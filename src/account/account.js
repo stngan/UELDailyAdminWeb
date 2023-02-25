@@ -37,7 +37,7 @@ onAuthStateChanged(auth, (user) => {
     // https://firebase.google.com/docs/reference/js/firebase.User
     const uid = user.uid;
     user.getIdToken().then(function(data) {
-      console.log(data)
+      // console.log(data)
     });
   } else {
     return;

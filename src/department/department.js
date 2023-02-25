@@ -174,7 +174,6 @@ function updateData(xIndex, xName, xEmail) {
       .catch((error) => {
         alert(error);
       });
-    getData();
   }
   else {
     return;

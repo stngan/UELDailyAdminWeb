@@ -8,6 +8,7 @@
 
   <!-- javascript -->
   <script src="../javascript/generalComponent.js" defer></script>
+  <script src="../javascript/jquery-3.6.0.js" defer></script>
   <script src="./notification.js" type="module" defer></script>
 
   <!-- css -->
@@ -56,13 +57,14 @@
 
      <div class="flexSpace">
       <div class="col-form input-short">
-       <p for="section1__emailtitle">Email gửi thông báo</p>
-       <input type="text" name="section1__emailtitle input-short" />
+       <p for="section1__emailtitle">Được gửi bởi</p>
+       <input type="text" name="section1__emailtitle input-short" id="sendBy" value="System"/>
       </div>
+      
 
       <div class="col-form input-short">
-       <p for="section1__sendby">Người gửi</p>
-       <input type="text" name="section1__sendby input-short" />
+       <p for="section1__sendby">ID người gửi</p>
+       <input type="text" name="section1__sendby input-short" id="senderId" value="sys"/>
       </div>
      </div>
 
@@ -73,34 +75,39 @@
 
      <div class="flexSpace">
       <div class="col-form input-short">
-       <p for="section1__emailtitle">Phương thức thông báo</p>
-       <input type="text" name="section1__emailtitle" />
+       <p for="section1__emailtitle">Loại thông báo</p>
+       <input type="text" name="section1__emailtitle" id="type" value="0"/>
       </div>
 
       <div class="col-form input-short">
-       <p for="section1__sendby">Email người nhận</p>
-       <input type="text" name="section1__sendby" />
+       <p for="section1__sendby">Chuyển tới màn hình</p>
+       <input type="text" name="section1__sendby" id="redirectType" value="2"/>
       </div>
      </div>
 
      <div class="col-form input-long">
       <p for="section1__emailtitle">Tiêu đề</p>
-      <input type="text" name="section1__emailtitle" id="notiTitle"/>
+      <input type="text" name="section1__emailtitle" id="notiTitle" value="Thông báo thử nghiệm"/>
      </div>
      <div class="col-form input-long">
       <p for="section1__emailtitle">Mô tả</p>
-      <textarea type="text" name="section1__emailtitle" id="notiDescription"> </textarea>
+      <input type="text" name="section1__emailtitle" id="notiDescription" value="Thông tin của thông báo thử nghiệm"/>
      </div>
 
      <div class="modal-button flexSpace">
       <div>
-       <input class="btnNoti btnNoti--submit" id="btnNoti--submit" type="submit" value="Gửi" />
+       <input
+        class="btnNoti btnNoti--submit"
+        id="btnNoti--submit"
+        type="submit"
+        value="Gửi"
+       />
       </div>
 
       <div>
-       <input class="btnNoti btnNoti--save" type="submit" value="Lưu" />
+       <button class="btnNoti btnNoti--save" id="btnNoti--save">Tạo mẫu</button>
 
-       <input class="btnNoti btnNoti--reset" type="reset" value="Xóa" />
+       <input class="btnNoti btnNoti--reset" type="reset" value="Xóa" id="btnNoti--reset"/>
       </div>
      </div>
     </div>
@@ -205,15 +212,15 @@
    <div class="main-container" style="background-color: #f5f5f5">
     <div class="modifyContainer">
      <div>
-      <button class="btn btnModify btnfilterAll">
+      <button class="btn btnModify btnfilterAll" id="btnfilterAll">
        <img src="../assets/modify_filter.svg" alt="" />
        Tất cả
       </button>
-      <button class="btn btnModify btnAddNoti" id="myBtn">
+      <button class="btn btnModify btnAddNoti" id="btnAddNoti">
        <img src="../assets/modify_add.svg" alt="" />
        Tạo mới
       </button>
-      <button class="btn btnModify btnDeleteTableItem">
+      <button class="btn btnModify btnDeleteTableItem" id="btnDeleteTableItem">
        <img src="../assets/modify_delete.svg" alt="" />
        Xóa
       </button>
@@ -232,7 +239,7 @@
     <div class="tableContainer">
      <div class="table-heading display-row">
       <div class="col-checkbox">
-       <input type="checkbox" name="" id="" />
+       <input type="checkbox" id="toggleAll" />
       </div>
 
       <div class="col-veryshorttext">
@@ -264,50 +271,17 @@
       </div>
      </div>
 
-     <div class="table-body" id="tableContentDepart">
-      <div class="item">
-       <div class="col-checkbox">
-        <input type="checkbox" name="" id="" />
-       </div>
-
-       <div class="col-veryshorttext">
-        <p>ID</p>
-       </div>
-
-       <div class="col-longtext">
-        <p>Tiêu đề</p>
-       </div>
-
-       <div class="col-shorttext">
-        <p>Ngày tạo</p>
-       </div>
-
-       <div class="col-shorttext">
-        <p>Người gửi</p>
-       </div>
-
-       <div class="col-veryshorttext item-status">
-        <p>Trạng thái</p>
-       </div>
-
-       <div class="col-button">
-        <p>Sửa</p>
-       </div>
-
-       <div class="col-button">
-        <p>Xóa</p>
-       </div>
-      </div>
-     </div>
+     <div class="table-body" id="tableContentNotification"></div>
     </div>
    </div>
   </article>
   <script defer>
    var modal = document.getElementById("modalAddNoti");
-   var btn = document.getElementById("myBtn");
+   var btn = document.getElementById("btnAddNoti");
    var span = document.getElementsByClassName("close")[0];
    btn.onclick = function () {
     modal.style.display = "block";
+
    };
    span.onclick = function () {
     modal.style.display = "none";

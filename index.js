@@ -77,12 +77,12 @@ const message = {
   tokens: registrationToken,
 };
 
-admin.messaging().sendMulticast(message)
-  .then((resp) => {
-    console.log('Message sent successfully:', resp);
-  }).catch((err) => {
-    console.log('Failed to send the message:', err);
-  });
+// admin.messaging().sendMulticast(message)
+//   .then((resp) => {
+//     console.log('Message sent successfully:', resp);
+//   }).catch((err) => {
+//     console.log('Failed to send the message:', err);
+//   });
 // Port website will run on
 app.listen(PORT, () => {
   console.log(`Listening on http://localhost:${PORT}`);
